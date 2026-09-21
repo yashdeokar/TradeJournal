@@ -1,8 +1,15 @@
 # 📈 TradeJournal - Professional Trading Journal & Habit Tracker
 
-A modern, high-performance web application designed for active traders to document daily sessions, pre-market preparation, psychological state, execution mistakes, and strict trading habits compliance.
+A modern, high-performance workspace designed for active traders to document daily trading sessions, pre-market preparation, psychological state, execution mistakes, and strict trading habits compliance.
 
-![TradeJournal](frontend/index.html)
+---
+
+## 🚀 Live Demo
+
+- 🌐 **Live Web Application (GitHub Pages)**: **[https://yashdeokar.github.io/TradeJournal/](https://yashdeokar.github.io/TradeJournal/)**
+- ⚡ **Netlify Mirror**: **[https://tradostats.netlify.app/](https://tradostats.netlify.app/)**
+
+> **Note**: Both deployments feature zero-server client-side persistence using `localStorage`, interactive Plotly equity charts, 35-day calendar grid, and RFC4180 CSV export.
 
 ---
 
@@ -10,7 +17,7 @@ A modern, high-performance web application designed for active traders to docume
 
 - **📊 Interactive Analytics Dashboard**:
   - Net P&L metrics, Win/Loss ratios, Profit Factor, and Average Win vs. Loss.
-  - Interactive Equity Growth Curve powered by Chart.js.
+  - Interactive Equity Growth Curve powered by Plotly.
   - 35-Day Interactive Trading Calendar Grid displaying daily P&L and grade tags.
   - P&L distribution and performance breakdowns.
 - **📝 Pre & Post Market Daily Logging**:
@@ -22,10 +29,23 @@ A modern, high-performance web application designed for active traders to docume
   - Phase B: In-Session Execution (Max Risk Cap, Setup Wait, FOMO Discipline, Screen Breaks).
   - Phase C: Post-Market Review (Trade Logging, Performance Review, Market Disconnect).
 - **💾 Dual-Mode Architecture**:
-  - **Local Mode**: Runs with FastAPI and persistent SQLite database (`trading_journal.db`).
-  - **Static / Netlify Mode**: Operates self-contained using client-side `localStorage`, requiring zero backend servers.
+  - **Static / Cloud Mode (GitHub Pages / Netlify)**: Operates self-contained using client-side `localStorage`, requiring zero backend servers.
+  - **Local Full-Stack Mode**: Runs with FastAPI and persistent SQLite database (`trading_journal.db`).
 - **📥 CSV Data Export**:
   - RFC4180 compliant CSV export compatible with Excel, Google Sheets, and other analytical tools.
+
+---
+
+## 🌐 Deployments
+
+### 1. GitHub Pages (Automated via GitHub Actions)
+Every push to the `main` branch automatically deploys the frontend via [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml).
+- **URL**: [https://yashdeokar.github.io/TradeJournal/](https://yashdeokar.github.io/TradeJournal/)
+
+### 2. Netlify Deployment
+TradeJournal includes native client-side storage persistence and `netlify.toml` out of the box.
+- **URL**: [https://tradostats.netlify.app/](https://tradostats.netlify.app/)
+- **Configuration**: Set publish directory to `frontend`.
 
 ---
 
@@ -57,34 +77,23 @@ A modern, high-performance web application designed for active traders to docume
 
 ---
 
-## 🌐 Deploying to Netlify
-
-TradeJournal includes native client-side storage persistence and `netlify.toml` out of the box.
-
-### One-Click GitHub + Netlify Integration (Recommended)
-1. Push this repository to your **GitHub** account.
-2. Go to [Netlify](https://app.netlify.com/) and click **"Add new site" > "Import an existing project"**.
-3. Select **GitHub** and authorize your TradeJournal repository.
-4. Netlify will automatically detect the settings:
-   - **Publish directory**: `frontend`
-5. Click **"Deploy site"**! Your trading journal will be live in seconds.
-
----
-
 ## 📂 Project Structure
 
 ```
 TradeJournal/
+├── .github/
+│   └── workflows/
+│       └── deploy-pages.yml  # Automatic GitHub Pages CI/CD workflow
 ├── backend/
-│   ├── database.py       # SQLite database queries & schemas
-│   └── main.py           # FastAPI REST API endpoints
+│   ├── database.py           # SQLite database queries & schemas
+│   └── main.py               # FastAPI REST API endpoints
 ├── frontend/
-│   ├── app.js            # Frontend controller, state manager & storage adapter
-│   └── index.html        # UI dashboard with Tailwind CSS & Lucide icons
-├── netlify.toml          # Netlify publish & rewrite configuration
-├── trading_journal.db    # Local SQLite database
-├── .gitignore            # Git ignore rules
-└── README.md             # Project documentation
+│   ├── app.js                # Frontend controller, state manager & storage adapter
+│   └── index.html            # UI dashboard with Tailwind CSS, Plotly & Lucide icons
+├── netlify.toml              # Netlify publish & rewrite configuration
+├── trading_journal.db        # Local SQLite database
+├── .gitignore                # Git ignore rules
+└── README.md                 # Project documentation
 ```
 
 ---
