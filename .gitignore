@@ -1,0 +1,16 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.db.bak
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
