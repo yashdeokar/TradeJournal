@@ -39,7 +39,7 @@ A modern, high-performance web application designed for active traders to docume
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/<your-username>/TradeJournal.git
+   git clone https://github.com/yashdeokar/TradeJournal.git
    cd TradeJournal
    ```
 
